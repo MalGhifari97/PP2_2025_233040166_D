@@ -10,7 +10,7 @@ import java.awt.*;
 public class TugasModul6Latihan1 {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            JFrame frame = new JFrame("Kalkulator - Layout Saja");
+            JFrame frame = new JFrame("Kalkulator");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setSize(320, 420);
             frame.setLocationRelativeTo(null);
