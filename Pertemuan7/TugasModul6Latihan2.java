@@ -9,14 +9,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- * Aplikasi konverter Celcius -> Fahrenheit
- * - JLabel "Celcius:"
- * - JTextField untuk input
- * - JButton "Konversi"
- * - JLabel "Fahrenheit:" dan JLabel hasil
- * - Menangani input bukan angka
- */
 public class TugasModul6Latihan2 {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
@@ -25,7 +17,6 @@ public class TugasModul6Latihan2 {
             frame.setSize(400, 140);
             frame.setLocationRelativeTo(null);
 
-            // Gunakan GridBagLayout agar rapi (atau bisa FlowLayout/GridLayout)
             JPanel panel = new JPanel(new GridBagLayout());
             GridBagConstraints c = new GridBagConstraints();
             c.insets = new Insets(6, 8, 6, 8);
@@ -48,12 +39,11 @@ public class TugasModul6Latihan2 {
             c.gridx = 0; c.gridy = 1; c.weightx = 0;
             panel.add(lblF, c);
 
-            JLabel result = new JLabel(""); // tempat hasil
+            JLabel result = new JLabel("");
             result.setFont(result.getFont().deriveFont(14f));
             c.gridx = 1; c.gridy = 1; c.gridwidth = 2; c.weightx = 1.0;
             panel.add(result, c);
 
-            // ActionListener untuk tombol Konversi
             btnConvert.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -65,18 +55,15 @@ public class TugasModul6Latihan2 {
                     try {
                         double celsius = Double.parseDouble(text);
                         double fahrenheit = (celsius * 9.0 / 5.0) + 32.0;
-                        // Format hasil supaya lebih rapi (2 desimal)
                         String formatted = String.format("%.2f °F", fahrenheit);
                         result.setText(formatted);
                     } catch (NumberFormatException ex) {
-                        // Penanganan jika input bukan angka
                         JOptionPane.showMessageDialog(frame, "Input tidak valid. Masukkan angka (contoh: 36.6).", "Error", JOptionPane.ERROR_MESSAGE);
                         result.setText("");
                     }
                 }
             });
 
-            // Support: tekan Enter pada JTextField juga memicu konversi
             tfC.addActionListener(btnConvert.getActionListeners()[0]);
 
             frame.add(panel);
@@ -84,4 +71,5 @@ public class TugasModul6Latihan2 {
         });
     }
 }
+
 
