@@ -10,10 +10,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
 
-/**
- *
- * @author ramaa
- */
 public class Latihan3 {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
@@ -38,3 +34,4 @@ public class Latihan3 {
         });
     }
 }
+
