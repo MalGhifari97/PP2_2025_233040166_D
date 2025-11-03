@@ -10,10 +10,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
 
-/**
- *
- * @author ramaa
- */
 public class TugasModul5 {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
